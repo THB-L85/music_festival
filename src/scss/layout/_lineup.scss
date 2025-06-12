@@ -1,0 +1,30 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.lineup{
+    background-color: v.$pink;
+    h3,.day{
+        text-align: center;
+        color: v.$white;
+    }
+
+    .day{
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+}
+
+.stages-container{
+    @include m.container;
+    @include m.tablet{
+        @include m.grid(2,5rem)
+    }
+}
+
+
+.bg-yellow{
+    background-color: v.$yellow;
+}
+.bg-green{
+    background-color: v.$green;
+}

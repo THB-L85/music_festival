@@ -328,6 +328,7 @@ body {
 }
 
 p {
+  font-size: 2rem;
   color: #000000;
   line-height: 1.5;
 }
@@ -458,4 +459,61 @@ body > section {
   background-color: #F53756;
   padding: 1rem 2rem;
   margin: 0;
+}
+
+.about-fest {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .about-fest {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.content-festival {
+  margin-top: 5rem;
+}
+.content-festival h2 {
+  margin: 0;
+}
+.content-festival .date {
+  color: #4CB8B3;
+  font-weight: 700;
+}
+
+.lineup {
+  background-color: #F53756;
+}
+.lineup h3, .lineup .day {
+  text-align: center;
+  color: #FFFFFF;
+}
+.lineup .day {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.stages-container {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .stages-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.bg-yellow {
+  background-color: #fdda00;
+}
+
+.bg-green {
+  background-color: #4CB8B3;
 }
