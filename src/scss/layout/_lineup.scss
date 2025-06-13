@@ -1,5 +1,6 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
+@use 'sass:color';
 
 .lineup{
     background-color: v.$pink;
@@ -13,7 +14,6 @@
         text-transform: uppercase;
     }
 }
-
 .stages-container{
     @include m.container;
     @include m.tablet{
@@ -21,10 +21,36 @@
     }
 }
 
+.stage{
+    padding-top: 2rem;
+    .stage-name{
+        font-size: 3rem;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+.timeline{
+    @include m.reset-list;
+    li{
+        font-weight: 700;
+        padding: 2.5rem;
+        span{
+            font-weight: 400;
+        }
+    }
+}
 
 .bg-yellow{
     background-color: v.$yellow;
+    li:nth-child(odd){
+        background-color: color.adjust(v.$yellow, $lightness: 5%);
+    }
 }
 .bg-green{
     background-color: v.$green;
+    li:nth-child(odd){
+        background-color: color.adjust(v.$green, $lightness: 5%);
+    }
 }

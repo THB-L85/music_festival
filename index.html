@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container header-content">
             <h1>Techno & EDM Fest</h1>
             <nav class="header-nav">
@@ -104,7 +104,7 @@
             <div class="stage bg-green">
                 <p class="stage-name">Techno</p>
 
-                <ul class="calendario">
+                <ul class="timeline">
                     <li>
                         24:00 | <span>Reinier Zonneveld</span>
                     </li>
@@ -152,5 +152,51 @@
             </div> <!--.stage-->
         </div> <!--.stages-contenedor -->
     </section>
+    <section class="gallery" id="gallery">
+        <h3>Gallery</h3>
+        <div class="images-gallery"></div>
+    </section>
+    <section id="tickets" class="tickets">
+        <h3>Tickets</h3>
+        <div class="tickets-content">
+            <div class="pass">
+                <p class="pass-name">One-Day Pass</p>
+                <header class="pass-header">
+                    <p>Include</p>
+                </header>
+                <div class="pass-body">
+                    <ul>
+                        <li>Access to both scenarios</li>
+                        <li>Unlimited drinks</li>
+                        <li>Event's T-shirt</li>
+                    </ul>
+                </div>
+                <footer class="pass-footer">
+                    <p>$50</p>
+                </footer>
+            </div>
+            <div class="pass">
+                <p class="pass-name">Two-Day Pass</p>
+                <header class="pass-header">
+                    <p>Include</p>
+                </header>
+                <div class="pass-body">
+                    <ul>
+                        <li>Access to both scenarios</li>
+                        <li>Unlimited drinks</li>
+                        <li>Event's T-shirt</li>
+                        <li>VIP Access </li>
+                    </ul>
+                </div>
+                <footer class="pass-footer">
+                    <p>$80</p>
+                </footer>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Techno & EDM Fest. All right reserved.</p>
+    </footer>
+    <script src="build/js/app.js"></script>
 </body>
 </html>
