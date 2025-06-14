@@ -10,6 +10,7 @@ function stickyHeader(){
     let about = document.querySelector('.about-fest');
 
     document.addEventListener('scroll', function () {
+        // check if the bottom of the about section is less than 1px from the top of the viewport
         if(about.getBoundingClientRect().bottom < 1){
             header.classList.add('fixed');
         }else{
@@ -90,18 +91,19 @@ function focusLink() {
         let links = document.querySelectorAll('.header-nav a');
     
         let actual = '';
-
+        // iterate over sections to find the current section
         sections.forEach( section => {
-    
+            // get the top position and height of the section
             let sectionTop = section.offsetTop;
             let sectionHeight = section.offsetHeight;
-    
-    
-           if(window.scrollY >= (sectionTop - sectionHeight / 3)){
-                actual = section.id;
-           }
+
+            // check if the current scroll position is within the section
+            if(window.scrollY >= (sectionTop - sectionHeight / 3)){
+                    actual = section.id;
+            }
         });
 
+        // iterate over links to add the active class, if the href not match the current section, remove the active class
         links.forEach( link => {
             if(link.getAttribute('href') === `#${actual}`){
                 link.classList.add('active');
@@ -120,6 +122,7 @@ function scrollToSection() {
         section.addEventListener('click', function (e) { 
             e.preventDefault();
             let href = this.getAttribute('href');
+            // select the section to scroll
             let sectionToScroll = document.querySelector(href);
             sectionToScroll.scrollIntoView({
                 behavior: 'smooth'
