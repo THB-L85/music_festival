@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    focusLink();
+    scrollToSection();
     stickyHeader();
     createGallery();
 });
@@ -78,4 +80,50 @@ function closeModal(){
         // remove modal
         modal?.remove();
     }, 450);
+}
+
+function focusLink() {
+    // add event listener to scroll
+    document.addEventListener('scroll', function () {
+        
+        let sections = document.querySelectorAll('section');
+        let links = document.querySelectorAll('.header-nav a');
+    
+        let actual = '';
+
+        sections.forEach( section => {
+    
+            let sectionTop = section.offsetTop;
+            let sectionHeight = section.offsetHeight;
+    
+    
+           if(window.scrollY >= (sectionTop - sectionHeight / 3)){
+                actual = section.id;
+           }
+        });
+
+        links.forEach( link => {
+            if(link.getAttribute('href') === `#${actual}`){
+                link.classList.add('active');
+            }else{
+                link.classList.remove('active');
+            }
+        });
+    });
+
+}
+
+function scrollToSection() {
+    let sectionsNav = document.querySelectorAll('.header-nav a');
+
+    sectionsNav.forEach( section => {
+        section.addEventListener('click', function (e) { 
+            e.preventDefault();
+            let href = this.getAttribute('href');
+            let sectionToScroll = document.querySelector(href);
+            sectionToScroll.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 }

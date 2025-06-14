@@ -311,6 +311,8 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   scroll-padding-top: 0rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 *,
@@ -325,6 +327,7 @@ body {
   font-style: normal;
   color: #000000;
   font-size: 2rem;
+  scrollbar-width: none;
 }
 body.overflow-hidden {
   overflow: hidden;
@@ -382,6 +385,7 @@ body > section {
   position: fixed;
   left: 0;
   right: 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   animation: fadeIn ease-in 0.2s;
 }
 @keyframes fadeIn {
@@ -441,7 +445,7 @@ body > section {
   font-size: 2.4rem;
   color: #FFFFFF;
 }
-.header-nav a:hover {
+.header-nav a.active, .header-nav a :hover {
   color: #fdda00;
 }
 
