@@ -4,12 +4,14 @@
 .header{
     background-color: v.$green;
 
-    &.fixed{
-        position: fixed;
-        left: 0;
-        right: 0;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-        animation: fadeIn ease-in 0.2s;
+    @include m.tablet{
+        &.fixed{
+            position: fixed;
+            left: 0;
+            right: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+            animation: fadeIn ease-in 0.2s;
+        }
     }
 
     @keyframes fadeIn{
