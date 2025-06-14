@@ -24,4 +24,4 @@ export function dev(){
     watch('src/js/**/*.js', js); // files with .js extension
 }
 
-export default series(js, css, dev);
+export default series(js, css);
