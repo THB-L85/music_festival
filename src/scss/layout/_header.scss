@@ -4,6 +4,31 @@
 .header{
     background-color: v.$green;
 
+    &.fixed{
+        position: fixed;
+        left: 0;
+        right: 0;
+        animation: fadeIn ease-in 0.2s;
+    }
+
+    @keyframes fadeIn{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+
     @include m.mobile{
         color: v.$white;
     }

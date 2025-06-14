@@ -1,6 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
+    stickyHeader();
     createGallery();
 });
+
+function stickyHeader(){
+    let header = document.querySelector('.header');
+    let about = document.querySelector('.about-fest');
+
+    document.addEventListener('scroll', function () {
+        if(about.getBoundingClientRect().bottom < 1){
+            header.classList.add('fixed');
+        }else{
+            header.classList.remove('fixed');
+        }
+    });
+}
 
 function createGallery (){
     // number of images
@@ -31,13 +45,37 @@ function openModal(i){
     // add on click function to close modal
     modal.onclick = closeModal;
 
+    // generate img
+    const image = document.createElement('IMG');
+    image.src = `/src/img/gallery/full/${i}.jpg`
+    image.alt = 'image-gallery'
+    
+    // add image to modal
+    modal.appendChild(image);
+    // add close button
+    let btn = document.createElement('BUTTON');
+    btn.classList.add('btn-close')
+    btn.textContent = 'X';
+    modal.appendChild(btn);
+
     // add to body
     let body = document.querySelector('body');
+    // add class for fixed modal
+    body.classList.add('overflow-hidden');
     body.appendChild(modal);
 }
 
 function closeModal(){
     // close modal
     let modal = document.querySelector('.modal');
-    modal?.remove();
+    // add class for out animation
+    modal.classList.add('fade-out');
+
+    setTimeout(function() {
+        let body = document.querySelector('body');
+        // remove class for unfixed modal
+        body.classList.remove('overflow-hidden');
+        // remove modal
+        modal?.remove();
+    }, 450);
 }

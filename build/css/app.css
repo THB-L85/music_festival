@@ -326,6 +326,9 @@ body {
   color: #000000;
   font-size: 2rem;
 }
+body.overflow-hidden {
+  overflow: hidden;
+}
 
 p {
   font-size: 2rem;
@@ -374,6 +377,28 @@ body > section {
 
 .header {
   background-color: #4CB8B3;
+}
+.header.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  animation: fadeIn ease-in 0.2s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @media (min-width: 480px) {
   .header {
@@ -585,6 +610,41 @@ body > section {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  animation: fadeIn ease-in 0.5s;
+}
+.modal.fade-out {
+  animation: fadeOut ease-in 0.5s;
+}
+.modal img {
+  max-width: 100rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+button.btn-close {
+  height: 4rem;
+  width: 4rem;
+  font-weight: 700;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
 }
 
 .tickets {
