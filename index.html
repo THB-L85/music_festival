@@ -36,7 +36,11 @@
     </div>
     <section class="about-fest">
         <div class="image">
-            <img src="/src/img/imagen_dj.jpg" alt="img-about-fest">
+            <picture>
+                <source srcset="/build/img/imagen_dj.avif" type="image/avif">
+                <source srcset="/build/img/imagen_dj.webp" type="image/webp">
+                <img width="300" height="200" loading="lazy" src="/build/img/imagen_dj.jpg" alt="img-about-fest">
+            </picture>
         </div>
         <div class="content-festival">
             <h2>Techno & EDM Fest</h2>
