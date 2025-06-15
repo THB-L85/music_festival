@@ -26,9 +26,12 @@ function createGallery (){
 
     // interation for generate each image in html
     for (let i = 1; i <= number_images; i++) {
-        const image = document.createElement('IMG');
-        image.src = `/src/img/gallery/full/${i}.jpg`
-        image.alt = 'image-gallery'
+        const image = document.createElement('PICTURE');
+        image.innerHTML = `
+            <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+            <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+            <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+        `;
 
         // add funcion on click to open modal
         image.onclick = function(){
@@ -49,9 +52,12 @@ function openModal(i){
     modal.onclick = closeModal;
 
     // generate img
-    const image = document.createElement('IMG');
-    image.src = `/src/img/gallery/full/${i}.jpg`
-    image.alt = 'image-gallery'
+    const image = document.createElement('PICTURE');
+    image.innerHTML = `
+        <source srcset="build/img/gallery/full/${i}.avif" type="image/avif">
+        <source srcset="build/img/gallery/full/${i}.webp" type="image/webp">
+        <img loading="lazy" width="200" height="300" src="build/img/gallery/full/${i}.jpg" alt="imagen galeria">
+    `;
     
     // add image to modal
     modal.appendChild(image);
